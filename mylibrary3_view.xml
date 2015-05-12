@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+
+<openerp>
+        <data>
+    <record model="ir.ui.view" id="author_form">
+        <field name="name">author.form</field>
+        <field name="model">mylibrary3.author</field>
+        <field name="arch" type="xml">
+            <form string="Author">
+                <label string="First Name" />
+                <field name="firstname"/>
+                <label string="Last Name" />
+                <field name="lastname"/> 
+                <label string="CIN" />
+                <field name="cin"/>  
+                 <label string="ville" />
+                <field name="ville_id"/>
+                <notebook colspan="3">
+                    <page string="Books">
+                      <field name="book_ids"/>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+     <record model="ir.ui.view" id="author_tree">
+        <field name="name">author.tree</field>
+        <field name="model">mylibrary3.author</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Author" >
+                <field name="firstname"/>
+                <field name="lastname"/>
+                <field name="cin"/>
+                <field name="book_ids"/>
+                <field name="ville_id"/>
+            </tree>
+        </field>
+    </record>
+
+v    <record model="ir.actions.act_window" id="action_author">
+        <field name="name">Author</field>
+        <field name="res_model">mylibrary3.author</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="book_form">
+        <field name="name">book.form</field>
+        <field name="model">mylibrary3.book</field>
+        <field name="arch" type="xml">
+            <form string="Book" >
+                <label string="Title" />
+                <field name="title"/>
+                <label string="Genre" />
+                <field name="genre"/>
+                <label string="CODE" />
+                <field name="code"/>
+                <label string="Author" />
+                <field name="author_id"/>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="book_tree">
+        <field name="name">book.tree</field>
+        <field name="model">mylibrary3.book</field>
+        <field name="arch" type="xml">
+            <tree string="Book" >
+                <field name="title"/>
+                <field name="genre"/>
+                <field name="code"/>
+                <field name="author_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_book">
+        <field name="name">Book</field>
+        <field name="res_model">mylibrary3.book</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+     <record model="ir.ui.view" id="ville_form">
+        <field name="name">ville.form</field>
+        <field name="model">mylibrary3.ville</field>
+        <field name="arch" type="xml">
+            <form string="Ville" >
+                <label string="Name" />
+                <field name="name"/>
+                <notebook colspan="4">
+                    <page string="Authors">
+                      <field name="author_id"/>
+                    </page>
+                </notebook>
+                
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="ville_tree">
+        <field name="name">ville.tree</field>
+        <field name="model">mylibrary3.ville</field>
+        <field name="arch" type="xml">
+            <tree string="Ville" >
+                <field name="name"/>
+               
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_ville">
+        <field name="name">Ville</field>
+        <field name="res_model">mylibrary3.ville</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.ui.view" id="ville_search">
+    <field name="name">ville</field>
+    <field name="model">mylibrary3.ville</field>
+    <field name="arch" type="xml">
+        <search string="ville">
+            <field name="name" />
+            <filter name="name" string="ville" />
+            
+        </search>
+    </field>
+</record>
+
+
+      
+    
+   
+    <menuitem id="mylibrary3" name="mylibrary3"/>
+        <menuitem name="mylibrary3" id="section_main_menu_mylibrary3" parent="mylibrary3" />
+        <menuitem name="Authors" id="choix_author" parent="section_main_menu_mylibrary3" action="action_author"/>
+        <menuitem name="Books" id="choix_book" parent="section_main_menu_mylibrary3" action="action_book"/>
+        <menuitem name="villes" id="choix_ville" parent="section_main_menu_mylibrary3" action="action_ville"/>
+    </data>
+    </openerp>
