@@ -17,7 +17,7 @@ class book(models.Model):
     author_id = fields.Many2one('mylibrary3.author','Author',ondelete='cascade')
     
 class ville(models.Model):
-    _name = 'mylibrary3.ville'
+    _name = 'mylibrary3.vile'
     name= fields.Char('ville', required=True)
     author_id = fields.One2many('mylibrary3.author','ville_id','AuthorsGY')
     
