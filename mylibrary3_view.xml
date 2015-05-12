@@ -16,8 +16,8 @@
                  <label string="ville" />
                 <field name="ville_id"/>
                 <notebook colspan="3">
-                    <page string="Boos">
-                      <field name="book_ids4"/>
+                    <page string="Books">
+                      <field name="book_ids"/>
                     </page>
                 </notebook>
             </form>
