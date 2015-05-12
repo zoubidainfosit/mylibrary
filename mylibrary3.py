@@ -19,5 +19,5 @@ class book(models.Model):
 class ville(models.Model):
     _name = 'mylibrary3.ville'
     name= fields.Char('ville', required=True)
-    author_id = fields.One2many('mylibrary3.author','ville_id','Authors')
+    author_id = fields.One2many('mylibrary3.author','ville_id','AuthorsGY')
     
